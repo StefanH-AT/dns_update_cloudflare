@@ -1,12 +1,11 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using DnsUpdate.Model.Config;
 using Serilog;
 
 namespace DnsUpdate;
 
-public static class Program
+internal static class Program
 {
 
     /// <param name="config">Path to the config file to load</param>

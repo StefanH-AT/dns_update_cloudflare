@@ -2,10 +2,10 @@
 
 namespace DnsUpdate.Model.Cloudflare;
 
-public record Meta
+internal record Meta
 {
     [JsonPropertyName("auto_added")]
-    public bool AutoAdded { get; set; }
+    public bool AutoAdded { get; init; }
     [JsonPropertyName("source")]
-    public string Source { get; set; }
+    public required string Source { get; init; }
 }

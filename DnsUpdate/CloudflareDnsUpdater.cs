@@ -36,7 +36,7 @@ internal class CloudflareDnsUpdater
         await ipQuery.QueryIp();
         if (!_forceUpdate && !ipQuery.HasIpChanged())
         {
-            _logger.Information("IP has not changed. Nothing to do. Clear cache file {FilePath} to force an update", _cache.GetCacheFilePath());
+            _logger.Information("IP has not changed. Nothing to do.");
             return;
         }
         var ip = ipQuery.Ip;

@@ -2,17 +2,17 @@
 
 namespace DnsUpdate.Model.Cloudflare;
 
-public record UpdateRequest {
+internal record UpdateRequest {
     
     [JsonPropertyName("type")]
-    public string Type { get; set; }
+    public required string Type { get; init; }
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; init; }
     [JsonPropertyName("content")]
-    public string Content { get; set; }
+    public required string Content { get; init; }
     [JsonPropertyName("proxied")]
-    public bool Proxied { get; set; }
+    public bool Proxied { get; init; }
     [JsonPropertyName("ttl")]
-    public int TimeToLive { get; set; }
+    public int TimeToLive { get; init; }
     
 }

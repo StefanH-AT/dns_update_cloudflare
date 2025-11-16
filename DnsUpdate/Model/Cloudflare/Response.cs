@@ -2,15 +2,15 @@
 
 namespace DnsUpdate.Model.Cloudflare;
 
-internal abstract record Response
+internal record Response
 {
     [JsonPropertyName("success")]
-    public bool Success { get; set; } = false;
+    public bool Success { get; init; } = false;
     
     [JsonPropertyName("errors")]
-    public string[] Errors { get; set; } = null!;
+    public string[] Errors { get; init; } = null!;
 
     [JsonPropertyName("messages")]
-    public string[] Messages { get; set; } = null!;
+    public string[] Messages { get; init; } = null!;
     
 }

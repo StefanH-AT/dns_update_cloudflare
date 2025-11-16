@@ -6,7 +6,7 @@ using Serilog;
 
 namespace DnsUpdate;
 
-public class IpQuery
+internal class IpQuery
 {
 
     private const string CacheIpName = "lastip";
@@ -14,7 +14,7 @@ public class IpQuery
     private readonly ILogger _logger;
     private readonly HttpClient _client;
     private readonly CacheManager _cache;
-    public string? Ip { get; set; }
+    public string? Ip { get; private set; }
 
     internal IpQuery(ILogger logger, HttpClient client, CacheManager cacheManager)
     {
@@ -55,6 +55,9 @@ public class IpQuery
 
     public void StoreIpInCache()
     {
-        _cache.Write(CacheIpName, Ip);
+        if (Ip is not null)
+        {
+            _cache.Write(CacheIpName, Ip);
+        }
     }
 }
